@@ -82,6 +82,9 @@ document.addEventListener('DOMContentLoaded', () => {
         } else if (command.includes('weather')) {
             window.open('https://weather.com', '_blank');
             speak('Opening weather website for updates...');
+        }else if (command.includes('songs')) {
+            window.open('https://www.spotify.com/', '_blank');
+            speak('Opening spotify for playing songs...');
         } else if (command.includes('say me a joke')) {
             speak('Why don’t scientists trust atoms? Because they make up everything!');
         } else if (command.includes('news')) {
