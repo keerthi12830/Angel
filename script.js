@@ -15,14 +15,14 @@ document.addEventListener('DOMContentLoaded', () => {
     recognition.lang = 'en-US';
 
     const synth = window.speechSynthesis;
-    let femaleVoice = null;
+    let maleVoice = null;
 
     // Load voices and select a female voice
     const loadVoices = () => {
         const voices = synth.getVoices();
-        femaleVoice = voices.find(voice => voice.name.toLowerCase().includes('female'));
-        if (!femaleVoice) {
-            femaleVoice = voices.find(voice => voice.name.toLowerCase().includes('en'));
+        maleVoice = voices.find(voice => voice.name.toLowerCase().includes('male'));
+        if (!maleVoice) {
+            maleVoice = voices.find(voice => voice.name.toLowerCase().includes('en'));
         }
     };
 
@@ -30,9 +30,9 @@ document.addEventListener('DOMContentLoaded', () => {
     loadVoices();
 
     function speak(text) {
-        if (femaleVoice) {
+        if (maleVoice) {
             const utterance = new SpeechSynthesisUtterance(text);
-            utterance.voice = femaleVoice;
+            utterance.voice = maleVoice;
             synth.speak(utterance);
         } else {
             responseDiv.textContent = text;
