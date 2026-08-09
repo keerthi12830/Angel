@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
             speak('Opening Wikipedia...');
         } else if (command.includes('time')) {
             const now = new Date();
-            const time = now.toLocaleTimeString();
+            const time = now.toLocaleTimeString('en-US',{ hour: 'numeric', minute: '2-digit', hour12: true });
             speak(`The current time is ${time}.`);
         } else if (command.includes('date')) {
             const now = new Date();
